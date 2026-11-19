@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electronics Square Drones, Gaming & Gear</title>
+<meta name="description" content="Electronics Square your neighborhood electronics store for drones, gaming gear, audio, and smart devices.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#home" class="brand">
+      <img src="assets/logo.png" alt="Electronics Square logo" class="brand-logo">
+      <span class="brand-name">Electronics<span class="brand-name-accent">Square</span></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#shop">Shop</a>
+      <a href="#categories">Categories</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Search products" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M10 3a7 7 0 105.1 11.86l4.02 4.02a1 1 0 001.42-1.42l-4.02-4.02A7 7 0 0010 3zm-5 7a5 5 0 1110 0 5 5 0 01-10 0z" fill="currentColor"/></svg>
+      </button>
+      <button class="icon-btn cart-btn" id="cartToggle" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 6h15l-1.5 9h-12L6 6zm0 0L5 3H2m5 15a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm11 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="icon-btn" id="adminHeaderTrigger" aria-label="Open admin panel" title="Admin">
+        <svg viewBox="0 0 24 24" width="19" height="19"><path d="M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm8.94 2.5a7.94 7.94 0 00-.14-1.47l1.6-1.25a.75.75 0 00.18-.96l-1.5-2.6a.75.75 0 00-.9-.34l-1.88.76a8 8 0 00-1.27-.74l-.29-2a.75.75 0 00-.74-.65h-3a.75.75 0 00-.74.65l-.29 2a8 8 0 00-1.27.74l-1.88-.76a.75.75 0 00-.9.34l-1.5 2.6a.75.75 0 00.18.96l1.6 1.25A7.94 7.94 0 003 11a7.94 7.94 0 00.14 1.47l-1.6 1.25a.75.75 0 00-.18.96l1.5 2.6a.75.75 0 00.9.34l1.88-.76a8 8 0 001.27.74l.29 2a.75.75 0 00.74.65h3a.75.75 0 00.74-.65l.29-2a8 8 0 001.27-.74l1.88.76a.75.75 0 00.9-.34l1.5-2.6a.75.75 0 00-.18-.96l-1.6-1.25a7.94 7.94 0 00.14-1.47z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="search-bar" id="searchBar">
+    <div class="wrap">
+      <input type="text" id="searchInput" placeholder="Search drones, controllers, headphones…" autocomplete="off">
+    </div>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="home">
+  <div class="circuit-bg" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow">Fly. Play. Power up.</p>
+      <h1>Electronics for people<br>who build their own fun.</h1>
+      <div class="hero-actions">
+        <a href="#shop" class="btn btn-primary">Shop the collection</a>
+        <a href="#categories" class="btn btn-ghost">Browse categories</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-logo-card">
+        <img src="assets/logo.png" alt="Electronics Square" class="hero-logo">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Categories ===== -->
+<section class="categories" id="categories">
+  <div class="wrap">
+    <h2 class="section-title">Shop by category</h2>
+    <div class="category-grid" id="categoryGrid"><!-- injected by script.js --></div>
+  </div>
+</section>
+
+<!-- ===== Shop / Product Grid ===== -->
+<section class="shop" id="shop">
+  <div class="wrap">
+    <div class="shop-header">
+      <h2 class="section-title">All products</h2>
+      <div class="filter-chips" id="filterChips"><!-- injected by script.js --></div>
+    </div>
+
+    <div class="product-grid" id="productGrid"><!-- injected by script.js --></div>
+    <p class="empty-state" id="emptyState" hidden>No products match your search. Try a different term or category.</p>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="contact" id="contact">
+  <div class="wrap contact-inner">
+    <div class="contact-copy">
+      <h2>Come say hi.</h2>
+      <p>Questions about a product, a warranty claim, or a bulk order? Send us a note a real person reads every message.</p>
+      <div class="contact-details">
+        <div><span>Email</span><a id="contactEmail" href="mailto:hello@electronicssquare.com">hello@electronicssquare.com</a></div>
+        <div><span>Phone</span><a id="contactPhone" href="tel:+2300000000">+230 000 0000</a></div>
+        <div><span>Hours</span><span id="contactHours">Mon–Sat, 9am–6pm</span></div>
+      </div>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <label>
+        Name
+        <input type="text" name="name" required placeholder="Your name">
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" required placeholder="you@example.com">
+      </label>
+      <label>
+        Phone / WhatsApp (optional)
+        <input type="tel" name="phone" placeholder="So we can reply on WhatsApp">
+      </label>
+      <label>
+        Message
+        <textarea name="message" rows="4" required placeholder="How can we help?"></textarea>
+      </label>
+      <div class="hp-field" aria-hidden="true">
+        <label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      </div>
+      <button type="submit" class="btn btn-primary">Send message</button>
+      <p class="form-note" id="formNote" hidden>Thanks we'll get back to you within one business day.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a href="#home" class="brand brand-footer">
+      <img src="assets/logo.png" alt="Electronics Square logo" class="brand-logo">
+      <span class="brand-name">Electronics<span class="brand-name-accent">Square</span></span>
+    </a>
+    <p class="footer-copy">© <span id="year"></span> Electronics Square. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#shop">Shop</a>
+      <a href="#contact">Contact</a>
+      <a href="#" id="adminTrigger" class="admin-trigger-link">Admin</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Admin overlay ===== -->
+<div class="admin-overlay" id="adminOverlay" hidden>
+
+  <!-- Login gate -->
+  <div class="admin-gate" id="adminGate">
+    <div class="admin-gate-card">
+      <img src="assets/logo.png" alt="Electronics Square" class="admin-gate-logo">
+      <h2>Admin sign in</h2>
+      <p>Sign in with an authorized admin account to manage products, categories, and stock.</p>
+      <form id="gateForm">
+        <input type="text" id="gateUsername" placeholder="Username" autocomplete="username" required>
+        <input type="password" id="gatePassword" placeholder="Password" autocomplete="current-password" required>
+        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+      </form>
+      <p class="admin-gate-error" id="gateError" hidden></p>
+      <button type="button" class="admin-gate-close" id="gateCloseBtn">Back to store</button>
+    </div>
+  </div>
+
+  <!-- Admin panel -->
+  <div class="admin-panel" id="adminPanel" hidden>
+    <header class="admin-header">
+      <div class="wrap admin-header-inner">
+        <div class="brand">
+          <img src="assets/logo.png" alt="Electronics Square logo" class="brand-logo">
+          <span class="brand-name">Electronics<span class="brand-name-accent">Square</span> <span class="admin-tag">Admin</span></span>
+        </div>
+        <div class="admin-header-actions">
+          <span class="admin-user" id="adminUserLabel"></span>
+          <button class="btn btn-ghost" id="logoutBtn">Log out</button>
+          <button class="btn btn-ghost" id="adminCloseBtn">Close ×</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap admin-main">
+
+      <section class="admin-card" id="ordersCard">
+        <div class="admin-card-header">
+          <h2>Orders <span class="count-badge" id="ordersBadge" hidden></span></h2>
+          <div class="admin-actions">
+            <select id="ordersFilter" class="admin-filter" aria-label="Show orders">
+              <option value="new">New</option>
+              <option value="confirmed">Confirmed</option>
+              <option value="completed">Completed</option>
+              <option value="cancelled">Cancelled</option>
+              <option value="all">All</option>
+            </select>
+            <button class="btn btn-ghost" id="ordersRefresh">Refresh</button>
+          </div>
+        </div>
+        <p class="admin-hint">Every order a customer places lands here as <strong>New</strong>. Stock is taken off when you <strong>Confirm</strong> an order, and given back if you cancel it afterwards.</p>
+        <p class="admin-save-note" id="ordersNote" hidden></p>
+        <div class="admin-list" id="ordersList"></div>
+      </section>
+
+      <section class="admin-card" id="messagesCard">
+        <div class="admin-card-header">
+          <h2>Messages <span class="count-badge" id="messagesBadge" hidden></span></h2>
+          <button class="btn btn-ghost" id="messagesRefresh">Refresh</button>
+        </div>
+        <p class="admin-hint">Messages sent from the contact form on the website.</p>
+        <div class="admin-list" id="messagesList"></div>
+      </section>
+
+      <section class="admin-card">
+        <h2>Categories</h2>
+        <form id="addCategoryForm" class="admin-inline-form">
+          <input type="text" id="newCategoryName" placeholder="New category name (e.g. Wearables)" required>
+          <button type="submit" class="btn btn-primary">Add category</button>
+        </form>
+        <div class="category-chip-list" id="categoryChipList"><!-- injected --></div>
+      </section>
+
+      <section class="admin-card">
+        <h2>Add a product</h2>
+        <form id="addForm" class="admin-form">
+          <div class="admin-form-grid">
+            <label>
+              Name
+              <input type="text" name="name" required placeholder="e.g. Nova Streaming Camera">
+            </label>
+            <label>
+              Category
+              <select name="cat" id="addCatSelect" required></select>
+            </label>
+            <label>
+              Price (MUR)
+              <input type="number" name="price" min="0" step="1" required placeholder="e.g. 4500">
+            </label>
+            <label>
+              Stock
+              <input type="number" name="stock" min="0" step="1" required placeholder="e.g. 10">
+            </label>
+            <label>
+              Photos (optional pick several)
+              <input type="file" name="image" accept="image/*" id="addImageInput" multiple>
+            </label>
+            <label>
+              Icon (fallback emoji)
+              <input type="text" name="icon" maxlength="4" placeholder="📷" value="📦">
+            </label>
+            <label>
+              Badge (optional)
+              <input type="text" name="badge" placeholder="New / Best seller">
+            </label>
+          </div>
+          <div class="admin-img-preview" id="addImagePreview" hidden>
+            <div class="admin-preview-grid" id="addImagePreviewGrid"></div>
+            <button type="button" id="addImageClear">Clear photos</button>
+          </div>
+          <label>
+            Description
+            <textarea name="desc" rows="2" placeholder="Short one-line description"></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Add product</button>
+        </form>
+      </section>
+
+      <section class="admin-card">
+        <div class="admin-card-header">
+          <h2>Current products</h2>
+        </div>
+        <p class="admin-save-note" id="saveNote" hidden></p>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Photo</th>
+                <th>Product</th>
+                <th>Category</th>
+                <th>Price (MUR)</th>
+                <th>Stock</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="productsTableBody"><!-- injected --></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="admin-card admin-settings">
+        <h2>Store settings</h2>
+        <div class="admin-form-grid">
+          <label>
+            WhatsApp order number
+            <input type="text" id="whatsappInput" placeholder="e.g. 23051234567">
+          </label>
+        </div>
+        <p class="admin-hint">Digits only, international format, no "+" or spaces.</p>
+        <div class="admin-form-grid">
+          <label>
+            Delivery charge (MUR)
+            <input type="number" id="deliveryFeeInput" min="0" step="1" placeholder="e.g. 275">
+          </label>
+        </div>
+        <p class="admin-hint">Added to the order total when a customer chooses delivery. Store pickup is always free.</p>
+        <button class="btn btn-primary" id="saveSettingsBtn">Save settings</button>
+      </section>
+
+      <section class="admin-card" id="backupsCard">
+        <div class="admin-card-header">
+          <h2>Backups</h2>
+          <div class="admin-actions">
+            <button class="btn btn-primary" id="backupNowBtn">Download a backup now</button>
+            <label class="btn btn-ghost admin-upload-btn">
+              Restore from a file…
+              <input type="file" id="restoreFileInput" accept=".zip" hidden>
+            </label>
+          </div>
+        </div>
+        <p class="admin-hint">A backup holds your whole shop: products, photos, orders, messages and settings. One is made automatically every day (the last 14 are kept) and saved on the computer running the shop so also download one now and then and keep it somewhere else, like a USB drive or cloud storage.</p>
+        <p class="admin-save-note" id="backupNote" hidden></p>
+        <div class="admin-list" id="backupsList"></div>
+      </section>
+
+      <section class="admin-card admin-settings">
+        <h2>Change admin password</h2>
+        <form id="changePasswordForm" class="admin-form-grid">
+          <label>
+            Current password
+            <input type="password" id="currentPasswordInput" required>
+          </label>
+          <label>
+            New password
+            <input type="password" id="newPasswordInput" required minlength="6">
+          </label>
+          <button type="submit" class="btn btn-ghost">Update password</button>
+        </form>
+        <p class="admin-save-note" id="passwordNote" hidden></p>
+      </section>
+
+    </main>
+
+    <!-- Edit product (details, specifications and photo gallery) -->
+    <div class="admin-modal" id="editModal" hidden>
+      <div class="admin-modal-card" role="dialog" aria-modal="true" aria-labelledby="editTitle">
+        <div class="admin-modal-head">
+          <h2 id="editTitle">Edit product</h2>
+          <button type="button" class="btn btn-ghost" id="editCloseBtn">Close ×</button>
+        </div>
+
+        <form id="editForm" class="admin-form">
+          <div class="admin-form-grid">
+            <label>Name <input type="text" name="name" required></label>
+            <label>Category <select name="cat" id="editCatSelect" required></select></label>
+            <label>Price (MUR) <input type="number" name="price" min="0" step="1" required></label>
+            <label>Stock <input type="number" name="stock" min="0" step="1" required></label>
+            <label>Icon (fallback emoji) <input type="text" name="icon" maxlength="4"></label>
+            <label>Badge (optional) <input type="text" name="badge" placeholder="New / Best seller"></label>
+            <label>Sale price (MUR) <input type="number" name="sale_price" min="0" step="1" placeholder="Empty = no sale"></label>
+            <label>Sale ends (optional) <input type="date" name="sale_ends"></label>
+          </div>
+          <p class="admin-hint">The sale price must be lower than the regular price. The sale runs through the end of the "Sale ends" day; leave the date empty to keep the sale on until you clear the sale price.</p>
+          <label>Short description (shown on the shop card)
+            <textarea name="desc" rows="2"></textarea>
+          </label>
+          <label>Full description (shown on the product page)
+            <textarea name="details" rows="6" placeholder="Describe the product. Leave a blank line between paragraphs."></textarea>
+          </label>
+          <label>Specifications one per line, written like “Battery: 40 hours”
+            <textarea name="specs" rows="6" placeholder="Battery: 40 hours&#10;Connectivity: Bluetooth 5.3&#10;Warranty: 12 months"></textarea>
+          </label>
+          <div class="admin-modal-actions">
+            <button type="submit" class="btn btn-primary">Save details</button>
+            <span class="admin-save-note" id="editNote" hidden></span>
+          </div>
+        </form>
+
+        <div class="admin-gallery-section">
+          <h3>Photos</h3>
+          <p class="admin-hint">The <strong>Main</strong> photo is the one on the shop card and the first one on the product page. Up to 12 photos. Photos are saved as soon as you add or remove them.</p>
+          <div class="admin-gallery" id="editGallery"></div>
+          <label class="btn btn-ghost admin-upload-btn">
+            + Add photos
+            <input type="file" id="editImageInput" accept="image/*" multiple hidden>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="contact-info.js"></script>
+<script src="common.js"></script>
+<script src="cart.js"></script>
+<script src="script.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

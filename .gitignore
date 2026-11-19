@@ -1,0 +1,15 @@
+# Never put the shop's live data in Git: it lives on the server (and in backups)
+backend/store.db
+backend/store.db-journal
+backend/backups/
+frontend/uploads/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editor / system files
+.vscode/
+.DS_Store
